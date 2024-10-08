@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A run app for competition",
+  "engines": {
+    "node": "v12.14.1"
+},
+  "main": "app.js",
+  "scripts": {
+    "client-install": "npm install --prefix ./",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix ./",
+    "dev": "concurrently \"npm run server\" \"npm run ./\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ./ && npm run build --prefix ./"
+  },
+  "keywords": [],
+  "author": "Sally Nielsen",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16"
+  }
+}
